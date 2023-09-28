@@ -1,0 +1,462 @@
+/* Color Palatte
+Dark Navy:   #020659
+Medium Navy: #020873
+Light Navy:  #030ABC
+Light Blue:  #0D8DFB
+Blue::       #2104D9
+Cereulean:   #2699FB
+Magenta:     #590242 */
+
+/* CSS Reset Settings */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* BASIC Layout Settings */
+
+* {
+    text-decoration: none;
+    color:#ffffff;
+}
+
+html {
+    box-sizing: border-box;
+    background: #020659;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 375px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+header {
+    position: relative;
+    top: 60px;
+    height:100px;
+    background-image: linear-gradient(to right, #2104D9, black);
+}
+
+header p {
+    padding: 5px;
+    font-weight: lighter;
+    font-family: geneva;
+
+}
+
+h1 {
+    font-size: 1.25em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+nav {
+    background: #020873;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 375px;
+    height: 60px;
+}
+
+nav h2 {
+    visibility: hidden;
+}
+
+li {
+    background: #020873;
+    padding: 10px 0 10px 20px;
+    font-size: small;
+}
+
+.smallcaps {
+    display: inline-block;
+    font-variant: small-caps;
+}
+
+.caps {
+    text-transform: uppercase;
+}
+
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 20px 20px;
+    position: relative;
+    user-select: none;
+}
+
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+label span:before {
+    top: 5px;
+}
+
+label span:after {
+    top: -5px;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ ul {
+    max-height: 500px;
+}
+
+input:checked ~ label span {
+    background: transparent;
+}
+
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+main h2, aside h2 {
+    font-weight: bold;
+    margin-left: 20px;
+    color: #590242;
+}
+
+h2, h3 {
+    font-size: 1em;
+}
+
+h3 {
+    color: #590242;
+}
+
+p, dl, dd {
+    font-size: 1em;
+}
+
+#trending {
+    margin-top: 80px;
+}
+
+#playlists {
+    margin: 10px 0;
+}
+
+#playlists img {
+    padding-bottom: 10px;
+}
+
+#playlists dt {
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#playlists dd {
+    text-align: center;
+    font-weight: lighter;
+    font-family: geneva;
+}
+
+#curated img {
+    padding-bottom: 10px;
+}
+
+#curated dt {
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#curated dd {
+    text-align: center;
+    font-weight: lighter;
+    font-family: geneva;
+}
+
+.more {
+    display: block;
+    padding: 5px;
+    margin: 10px 0 30px 32px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: #590242;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer p {
+    font-size: .75em;
+    text-align: center;
+    margin: 0;
+    color: #590242;
+}
+
+/* HOVER Styles settings */
+
+.more:hover {
+    display: block;
+    padding: 5px;
+    margin: 10px 0 30px 32px;
+    width: 150px;
+    border-radius: 5px;
+    background-color: #020659;
+    color: #ffffff;
+    text-align: center;
+}
+
+a:hover {
+    background: #590242;
+    border-radius: 5px;
+}
+
+/* SCROLLBAR settings */
+
+.scroll {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.scroll section {
+    margin: 10px;
+    position: relative;
+}
+
+.scroll div {
+    position: absolute;
+    top: 251px;
+    background: rgba(255,255,255,.75);
+    color: #590242;
+    padding: 5px;
+    height: 60px;
+    width: 350px;
+}
+.scroll dt, .scroll dd {
+    color: #590242;
+}
+
+dt, dd {
+    padding-right: 10px;
+}
+
+.scroll2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: #2699FB;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.scroll2 section {
+    display: grid;
+    align-items: baseline;
+    position: relative;
+    height: 250px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0D8DFB;
+}
+
+.scroll2 div {
+    display: grid;
+    align-content: center;
+}
+
+.scroll3 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    background-color: #030A8C;
+    height: 300px;
+    margin-top: 10px;
+}
+
+.scroll3 section {
+    display: flex;
+    align-items: baseline;
+    position: relative;
+    height: 250px;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #020873;
+}
+
+.scroll3 div {
+    display: grid;
+    align-content: center;
+}
+
+#trending ::-webkit-scrollbar {
+    width: 15px;
+}
+#trending ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242;
+}
+#trending ::-webkit-scrollbar-thumb {
+    background-color: #590242;
+    border-radius: 5px;
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+    background-color: #020659;
+}
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+    width: 15px;
+}
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px #020659;
+}
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb {
+    background-color: #020659;
+    border-radius: 5px;
+}
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff;
+}
+
+/* AUDIOPLAYER settings */
+
+audio {
+    position: absolute;
+    bottom: 150px;
+    left: 5px;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-play-button {
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+audio::-webkit-media-controls-enclosure {
+    background-color: rgba(255,255,255,.50);
+}
+
+/* MEDIA Control Settings */
+
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        column-gap: 60px;
+    }
+
+    label span, input {
+        display: none;
+    }
+
+    body, nav {
+        width: 834px;
+    }
+
+    .more {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+
+    .scroll2 {
+        float: left;
+        width: 50%;
+    }
+
+    .scroll3 {
+        float: right;
+        width: 50%;
+    }
+
+    #playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar {
+
+    }
+}
